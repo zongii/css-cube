@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sliders"> 
+        <div class="slider">
+            <input id="x-range" type="range" min="-360" max="360" value="0" oninput="xrangeValue.innerText = this.value; updateCube()">
+            <p id="xrangeValue">0</p>
+        </div>
+        <div class="slider">
+            <input id="y-range" type="range" min="-360" max="360" value="0" oninput="yrangeValue.innerText = this.value; updateCube()">
+            <p id="yrangeValue">0</p>
+        </div>
+        <div class="slider">
+            <input id="z-range" type="range" min="-360" max="360" value="0" oninput="zrangeValue.innerText = this.value; updateCube()">
+            <p id="zrangeValue">0</p>
+        </div>
+        <div class="slider">
+            <input id="angle" type="range" min="-360" max="360" value="0" oninput="angleValue.innerText = this.value; updateCube()">
+            <p id="angleValue">0</p>
+        </div>
+    </div>
+    <div class="rootcontainer">
+        <div id="test1" class="container">
+            <div id="cube1" class="cube">
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+            </div>
+        </div>
+        <div id="test3" class="container">
+            <div id="cube2" class="cube">
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+            </div> 
+        </div>
+        <div class="container">
+            <div id="cube3" class="cube">
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+            </div>
+        </div>
+        <div id="test2" class="container">
+            <div id="cube4" class="cube">
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+                <div class="side"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        //rotate cue inner ais
+
+        function updateCube() {
+            var x = document.getElementById("x-range").value;
+            var y = document.getElementById("y-range").value;
+            var z = document.getElementById("z-range").value;
+            var angle = document.getElementById("angle").value;
+            document.getElementById("cube1").style.transform = "rotateX(" + x + "deg) rotateY(" + y + "deg) rotateZ(" + z + "deg) rotate(" + angle + "deg)";
+            
+        }
+    </script>
+</body>
+</html>
